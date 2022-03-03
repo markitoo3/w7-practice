@@ -1,3 +1,5 @@
+
+
 input {
     width: 150px;
     height: 20px;
@@ -5,6 +7,11 @@ input {
 }
 
 button {
+    width: 80px;
+    height: 40px;
+}
+
+select {
     width: 80px;
     height: 40px;
 }
