@@ -1,38 +1,27 @@
-function init(mathFunction) {
 
-    var a = 5;
-    var b = 6;
-
-
-    if (a < b ){
-        let c = mathFunction(b, a);
-        /* (function(){
-            var c = b - a;
-            console.log(c);
-        })(); */
-        console.log(c);
-        
-    } else {
-        let c = mathFunction(a, b);
-       /*  (function(){
-            var c = a - b;
-            console.log(c);
-        })(); */
-
-        console.log(c);
-        
-    };
-
-    
-};
-
-const initC = (firstNumber, secondNumber) => {
-    return firstNumber - secondNumber;
-};
-
-const initD = (firstNumber, secondNumber) => {
-    return firstNumber * secondNumber;
-};
+const form = function() {
+    return `
+    <input class="input1"></input>
+    <input class="input2"></input>
+    <input class="input3"></input>
+    <button class="button">Ne ne ne</button>
+    `;
+}
 
 
-init(initD);
+
+function loadEvent() {
+    console.log("load");
+    const rootElement = document.getElementById("root")
+
+    rootElement.insertAdjacentHTML("beforeend", form())
+
+    const inputList = document.querySelectorAll("input")
+    for (const input of inputList) {
+        input.addEventListener("input", function(event){
+            console.log(event.target.value);
+        })
+            
+    }
+}
+window.addEventListener("load", loadEvent)
